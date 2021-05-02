@@ -3,7 +3,6 @@ package ru.accident;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
-/*
 @SpringBootTest
 class AccidentApplicationTests {
 
@@ -12,4 +11,3 @@ class AccidentApplicationTests {
     }
 
 }
-*/
