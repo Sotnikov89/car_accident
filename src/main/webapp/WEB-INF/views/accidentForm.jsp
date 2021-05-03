@@ -57,6 +57,14 @@
                         <label for="text" class="form-label">Описание</label>
                         <form:textarea path="text" value="${accident.text}" class="form-control" id="text" rows="3"/>
                     </div>
+                    <div class="mb-3">
+                        <label for="type" class="form-label">Описание</label>
+                        <form:select path="accidentType.id" value="${accident.accidentType}" class="form-select" id="type">
+                            <c:forEach items="${types}" var="type">
+                                <option value="${type.id}">${type.name}</option>
+                            </c:forEach>
+                        </form:select>
+                    </div>
                     <button type="submit" class="btn btn-light" style="background-color: #e3f2fd;">Сохранить</button>
                 </form:form>
         </div>

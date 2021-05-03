@@ -51,6 +51,7 @@
                 <th scope="col">#</th>
                 <th scope="col">Имя</th>
                 <th scope="col">Адрес</th>
+                <th scope="col">Тип</th>
                 <th scope="col">Описание</th>
                 <th scope="col"></th>
             </tr>
@@ -62,6 +63,7 @@
                 <th scope="row"><c:out value="${acc.id}"/></th>
                 <td><c:out value="${acc.name}"/></td>
                 <td><c:out value="${acc.address}"/></td>
+                <td><c:out value="${acc.accidentType.name}"/></td>
                 <td><c:out value="${acc.text}"/></td>
                 <td><a href="/accident/<c:out value="${acc.id}"/>"><i class="fa fa-gear custom"></i></a></td>
             </tr>

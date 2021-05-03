@@ -9,10 +9,7 @@ import lombok.NoArgsConstructor;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-public class Accident {
+public class AccidentType {
     private int id;
     private String name;
-    private String text;
-    private String address;
-    private AccidentType accidentType;
 }
