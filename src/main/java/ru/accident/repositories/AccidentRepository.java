@@ -11,8 +11,8 @@ import java.util.concurrent.atomic.AtomicInteger;
 @Repository
 public class AccidentRepository {
 
-    private HashMap<Integer, Accident> accidents = new HashMap();
-    private static AtomicInteger ID_Supplier = new AtomicInteger(3);
+    private final HashMap<Integer, Accident> accidents = new HashMap();
+    private final static AtomicInteger ID_Supplier = new AtomicInteger(3);
 
     public AccidentRepository() {
     }

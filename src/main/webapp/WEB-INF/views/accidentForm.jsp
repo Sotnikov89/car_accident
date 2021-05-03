@@ -25,10 +25,10 @@
                 <div class="collapse navbar-collapse" id="navbarText">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                         <li class="nav-item">
-                            <a class="nav-link" href="/accident/index">Главная</a>
+                            <a class="nav-link" href="/car_accident/index">Главная</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="/accident/create">Добавить инцидент</a>
+                            <a class="nav-link" href="/car_accident/create">Добавить инцидент</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="#">Вход/Регистрация</a>
@@ -43,7 +43,7 @@
     </div>
     <div class="row">
         <div class="row">
-                <form:form action="/accident/saveOrUpdate" method="post" modelAttribute="accident">
+                <form:form action="/car_accident/saveOrUpdate" method="post" modelAttribute="accident">
                     <form:input path="id" type="hidden" value="${accident.id}"/>
                     <div class="mb-3">
                         <label for="name" class="form-label">Имя</label>

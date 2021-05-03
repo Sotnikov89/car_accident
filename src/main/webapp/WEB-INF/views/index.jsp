@@ -28,10 +28,10 @@
                 <div class="collapse navbar-collapse" id="navbarText">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                         <li class="nav-item">
-                            <a class="nav-link" href="/accident/index">Главная</a>
+                            <a class="nav-link" href="/car_accident/index">Главная</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="/accident/create">Добавить инцидент</a>
+                            <a class="nav-link" href="/car_accident/create">Добавить инцидент</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="#">Вход/Регистрация</a>
@@ -65,7 +65,7 @@
                 <td><c:out value="${acc.address}"/></td>
                 <td><c:out value="${acc.accidentType.name}"/></td>
                 <td><c:out value="${acc.text}"/></td>
-                <td><a href="/accident/<c:out value="${acc.id}"/>"><i class="fa fa-gear custom"></i></a></td>
+                <td><a href="/car_accident/update/<c:out value="${acc.id}"/>"><i class="fa fa-gear custom"></i></a></td>
             </tr>
             </c:forEach>
             </tbody>

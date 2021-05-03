@@ -6,6 +6,7 @@ import ru.accident.domain.AccidentType;
 
 @Component
 public class BaseDownLoad {
+
     private final AccidentRepository accidentRepository;
     private final AccidentTypeRepository accidentTypeRepository;
 

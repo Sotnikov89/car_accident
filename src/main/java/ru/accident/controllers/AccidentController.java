@@ -22,7 +22,7 @@ public class AccidentController {
         return "accidentForm";
     }
 
-    @GetMapping("/{id}")
+    @GetMapping("/update/{id}")
     public String getEditForm(@PathVariable int id, Model model) {
         model.addAttribute("accident", accidentService.getById(id));
         model.addAttribute("types", typeService.findAll());
