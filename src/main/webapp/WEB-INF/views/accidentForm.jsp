@@ -58,12 +58,22 @@
                         <form:textarea path="text" value="${accident.text}" class="form-control" id="text" rows="3"/>
                     </div>
                     <div class="mb-3">
-                        <label for="type" class="form-label">Описание</label>
+                        <label for="type" class="form-label">Тип</label>
                         <form:select path="accidentType.id" value="${accident.accidentType}" class="form-select" id="type">
                             <c:forEach items="${types}" var="type">
-                                <option value="${type.id}">${type.name}</option>
+                                <option value="${type.id}"
+                                        <c:if test="${type.id == accident.accidentType.id}"> selected </c:if>
+                                >${type.name}</option>
                             </c:forEach>
                         </form:select>
+                    </div>
+                    <div class="mb-3">
+                        <label for="rule" class="form-label">Статья</label>
+                        <select name="rIds" class="form-select" id="rule" multiple>
+                            <<c:forEach items="${rules}" var="rule">
+                                <option value="${rule.id}">${rule.name}</option>
+                            </c:forEach>>
+                        </select>
                     </div>
                     <button type="submit" class="btn btn-light" style="background-color: #e3f2fd;">Сохранить</button>
                 </form:form>

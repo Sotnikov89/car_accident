@@ -3,9 +3,7 @@ package ru.accident.repositories;
 import org.springframework.stereotype.Repository;
 import ru.accident.domain.Accident;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
+import java.util.*;
 import java.util.concurrent.atomic.AtomicInteger;
 
 @Repository
@@ -17,8 +15,8 @@ public class AccidentRepository {
     public AccidentRepository() {
     }
 
-    public List<Accident> findAll() {
-        return new ArrayList<>(accidents.values());
+    public Set<Accident> findAll() {
+        return new HashSet<>(accidents.values());
     }
 
     public void saveOrUpdate(Accident accident) {

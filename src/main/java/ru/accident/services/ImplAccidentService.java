@@ -7,7 +7,7 @@ import ru.accident.domain.AccidentType;
 import ru.accident.repositories.AccidentRepository;
 import ru.accident.repositories.AccidentTypeRepository;
 
-import java.util.List;
+import java.util.Set;
 
 @Service
 @AllArgsConstructor
@@ -17,7 +17,7 @@ public class ImplAccidentService implements AccidentService {
     private final AccidentTypeRepository accidentTypeRepository;
 
     @Override
-    public List<Accident> findAll() {
+    public Set<Accident> findAll() {
         return accidentRepository.findAll();
     }
 

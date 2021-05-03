@@ -52,18 +52,24 @@
                 <th scope="col">Имя</th>
                 <th scope="col">Адрес</th>
                 <th scope="col">Тип</th>
+                <th scope="col">Статья</th>
                 <th scope="col">Описание</th>
                 <th scope="col"></th>
             </tr>
             </thead>
             <tbody>
-            <%--@elvariable id="accidents" type="java.util.List"--%>
+            <%--@elvariable id="accidents" type="java.util.Set"--%>
             <c:forEach items="${accidents}" var="acc">
             <tr>
                 <th scope="row"><c:out value="${acc.id}"/></th>
                 <td><c:out value="${acc.name}"/></td>
                 <td><c:out value="${acc.address}"/></td>
                 <td><c:out value="${acc.accidentType.name}"/></td>
+                <td>
+                    <c:forEach items="${acc.rules}" var="rule">
+                        <c:out value="${rule.name}"/>
+                    </c:forEach>
+                </td>
                 <td><c:out value="${acc.text}"/></td>
                 <td><a href="/car_accident/update/<c:out value="${acc.id}"/>"><i class="fa fa-gear custom"></i></a></td>
             </tr>

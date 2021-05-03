@@ -2,10 +2,10 @@ package ru.accident.services;
 
 import ru.accident.domain.Accident;
 
-import java.util.List;
+import java.util.Set;
 
 public interface AccidentService {
-    List<Accident> findAll();
+    Set<Accident> findAll();
     void saveOrUpdate(Accident accident);
     public Accident getById(int id);
 }
