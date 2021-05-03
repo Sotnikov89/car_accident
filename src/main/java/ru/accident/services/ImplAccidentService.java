@@ -11,10 +11,20 @@ import java.util.Map;
 @AllArgsConstructor
 public class ImplAccidentService implements AccidentService{
 
-    private AccidentRepository accidentRepository;
+    private final AccidentRepository accidentRepository;
 
     @Override
     public Map<Integer, Accident> findAll() {
-        return accidentRepository.getAllAccidents();
+        return accidentRepository.findAll();
+    }
+
+    @Override
+    public void saveOrUpdate(Accident accident) {
+        accidentRepository.saveOrUpdate(accident);
+    }
+
+    @Override
+    public Accident getById(int id) {
+        return accidentRepository.getById(id);
     }
 }

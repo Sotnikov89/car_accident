@@ -10,10 +10,9 @@ import ru.accident.services.ImplAccidentService;
 @Controller
 @AllArgsConstructor
 public class IndexController {
+    private final ImplAccidentService implAccidentService;
 
-    private ImplAccidentService implAccidentService;
-
-    @GetMapping("/")
+    @GetMapping({"/", "/index"})
     public String index(Model model) {
         model.addAttribute("accidents", implAccidentService.findAll());
         return "index";

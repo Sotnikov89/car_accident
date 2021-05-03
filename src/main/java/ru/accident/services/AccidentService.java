@@ -6,4 +6,6 @@ import java.util.Map;
 
 public interface AccidentService {
     Map<Integer, Accident> findAll();
+    void saveOrUpdate(Accident accident);
+    public Accident getById(int id);
 }

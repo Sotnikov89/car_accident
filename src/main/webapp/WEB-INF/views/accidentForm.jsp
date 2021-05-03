@@ -1,15 +1,12 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <html>
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet"
           integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
-    <link rel = "stylesheet" href = "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css">
-    <style>
-        i.mysize {font-size: 20em; color: #e3f2fd;}
-    </style>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"
@@ -45,29 +42,24 @@
         </nav>
     </div>
     <div class="row">
-        <table class="table table-hover">
-            <thead>
-            <tr>
-                <th scope="col">#</th>
-                <th scope="col">Имя</th>
-                <th scope="col">Адрес</th>
-                <th scope="col">Описание</th>
-                <th scope="col"></th>
-            </tr>
-            </thead>
-            <tbody>
-            <%--@elvariable id="accidents" type="java.util.Map"--%>
-            <c:forEach items="${accidents}" var="acc">
-            <tr>
-                <th scope="row"><c:out value="${acc.key}"/></th>
-                <td><c:out value="${acc.value.name}"/></td>
-                <td><c:out value="${acc.value.address}"/></td>
-                <td><c:out value="${acc.value.text}"/></td>
-                <td><a href="/accident/<c:out value="${acc.key}"/>"><i class="fa fa-gear custom"></i></a></td>
-            </tr>
-            </c:forEach>
-            </tbody>
-        </table>
+        <div class="row">
+                <form:form action="/accident/saveOrUpdate" method="post" modelAttribute="accident">
+                    <form:input path="id" type="hidden" value="${accident.id}"/>
+                    <div class="mb-3">
+                        <label for="name" class="form-label">Имя</label>
+                        <form:input path="name" value="${accident.name}" type="text" class="form-control" id="name" aria-describedby="emailHelp"/>
+                    </div>
+                    <div class="mb-3">
+                        <label for="address" class="form-label">Адрес</label>
+                        <form:input path="address" value="${accident.address}" type="text" class="form-control" id="address" aria-describedby="emailHelp"/>
+                    </div>
+                    <div class="mb-3">
+                        <label for="text" class="form-label">Описание</label>
+                        <form:textarea path="text" value="${accident.text}" class="form-control" id="text" rows="3"/>
+                    </div>
+                    <button type="submit" class="btn btn-light" style="background-color: #e3f2fd;">Сохранить</button>
+                </form:form>
+        </div>
     </div>
 </div>
 </body>
