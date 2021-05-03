@@ -5,7 +5,7 @@ import org.springframework.stereotype.Service;
 import ru.accident.domain.Accident;
 import ru.accident.repositories.AccidentRepository;
 
-import java.util.Map;
+import java.util.List;
 
 @Service
 @AllArgsConstructor
@@ -14,7 +14,7 @@ public class ImplAccidentService implements AccidentService{
     private final AccidentRepository accidentRepository;
 
     @Override
-    public Map<Integer, Accident> findAll() {
+    public List<Accident> findAll() {
         return accidentRepository.findAll();
     }
 

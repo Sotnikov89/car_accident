@@ -56,14 +56,14 @@
             </tr>
             </thead>
             <tbody>
-            <%--@elvariable id="accidents" type="java.util.Map"--%>
+            <%--@elvariable id="accidents" type="java.util.List"--%>
             <c:forEach items="${accidents}" var="acc">
             <tr>
-                <th scope="row"><c:out value="${acc.key}"/></th>
-                <td><c:out value="${acc.value.name}"/></td>
-                <td><c:out value="${acc.value.address}"/></td>
-                <td><c:out value="${acc.value.text}"/></td>
-                <td><a href="/accident/<c:out value="${acc.key}"/>"><i class="fa fa-gear custom"></i></a></td>
+                <th scope="row"><c:out value="${acc.id}"/></th>
+                <td><c:out value="${acc.name}"/></td>
+                <td><c:out value="${acc.address}"/></td>
+                <td><c:out value="${acc.text}"/></td>
+                <td><a href="/accident/<c:out value="${acc.id}"/>"><i class="fa fa-gear custom"></i></a></td>
             </tr>
             </c:forEach>
             </tbody>

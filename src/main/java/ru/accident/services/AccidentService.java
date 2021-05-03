@@ -2,10 +2,11 @@ package ru.accident.services;
 
 import ru.accident.domain.Accident;
 
+import java.util.List;
 import java.util.Map;
 
 public interface AccidentService {
-    Map<Integer, Accident> findAll();
+    List<Accident> findAll();
     void saveOrUpdate(Accident accident);
     public Accident getById(int id);
 }

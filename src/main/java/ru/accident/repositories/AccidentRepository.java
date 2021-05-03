@@ -3,12 +3,15 @@ package ru.accident.repositories;
 import org.springframework.stereotype.Repository;
 import ru.accident.domain.Accident;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.concurrent.atomic.AtomicInteger;
 
 @Repository
 public class AccidentRepository {
+
     private HashMap<Integer, Accident> accidents = new HashMap();
     private static AtomicInteger ID_Supplier = new AtomicInteger(3);
 
@@ -17,8 +20,9 @@ public class AccidentRepository {
         accidents.put(2, Accident.builder().id(2).name("Андрей").address("Екатеринбург").text("Парковка в неположенном месте").build());
         accidents.put(3, Accident.builder().id(3).name("Артем").address("Новосибирск").text("Превышение скорости").build());
     }
-    public Map<Integer, Accident> findAll() {
-        return accidents;
+
+    public List <Accident> findAll() {
+        return new ArrayList<>(accidents.values());
     }
     public void saveOrUpdate(Accident accident) {
         if (accident.getId()==0) {
