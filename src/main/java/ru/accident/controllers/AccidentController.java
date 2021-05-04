@@ -10,7 +10,6 @@ import ru.accident.services.ImplAccidentTypeService;
 import ru.accident.services.ImplRuleService;
 
 import javax.servlet.http.HttpServletRequest;
-import java.net.http.HttpRequest;
 import java.util.Arrays;
 
 @Controller
@@ -40,8 +39,7 @@ public class AccidentController {
     @PostMapping("/saveOrUpdate")
     public String saveOrUpdate(@ModelAttribute Accident accident, HttpServletRequest req) {
         String[] rulesId = req.getParameterValues("rIds");
-        Arrays.stream(rulesId).map(Integer::parseInt).map(ruleService::findById).forEach(accident::addRule);
-        accidentService.saveOrUpdate(accident);
+        accidentService.saveOrUpdate(accident, rulesId);
         return "redirect:/index";
     }
 }
