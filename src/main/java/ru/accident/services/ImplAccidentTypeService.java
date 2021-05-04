@@ -3,6 +3,7 @@ package ru.accident.services;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 import ru.accident.domain.AccidentType;
+import ru.accident.repositories.hbm.AccidentTypeHbm;
 import ru.accident.repositories.jdbc.AccidentTypeJdbc;
 import ru.accident.repositories.mem.AccidentTypeMem;
 
@@ -12,7 +13,7 @@ import java.util.Set;
 @AllArgsConstructor
 public class ImplAccidentTypeService implements AccidentTypeService{
 
-    private final AccidentTypeJdbc accidentTypeRepository;
+    private final AccidentTypeHbm accidentTypeRepository;
 
     @Override
     public Set<AccidentType> findAll() {

@@ -4,6 +4,9 @@ import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 import ru.accident.domain.Accident;
 import ru.accident.domain.AccidentType;
+import ru.accident.repositories.hbm.AccidentHbm;
+import ru.accident.repositories.hbm.AccidentTypeHbm;
+import ru.accident.repositories.hbm.RuleHbm;
 import ru.accident.repositories.jdbc.AccidentJdbc;
 import ru.accident.repositories.jdbc.AccidentTypeJdbc;
 import ru.accident.repositories.jdbc.RuleJdbc;
@@ -18,9 +21,9 @@ import java.util.Set;
 @AllArgsConstructor
 public class ImplAccidentService implements AccidentService {
 
-    private final AccidentJdbc accidentRepository;
-    private final AccidentTypeJdbc accidentTypeRepository;
-    private final RuleJdbc ruleRepository;
+    private final AccidentHbm accidentRepository;
+    private final AccidentTypeHbm accidentTypeRepository;
+    private final RuleHbm ruleRepository;
 
     @Override
     public Set<Accident> findAll() {

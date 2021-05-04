@@ -15,20 +15,20 @@ import javax.sql.DataSource;
 @EnableTransactionManagement
 public class JdbcConfig {
     @Bean
-    public DataSource ds(@Value("${jdbc.driver}") String driver,
-                         @Value("${jdbc.url}") String url,
-                         @Value("${jdbc.username}") String username,
-                         @Value("${jdbc.password}") String password) {
-        BasicDataSource ds = new BasicDataSource();
-        ds.setDriverClassName(driver);
-        ds.setUrl(url);
-        ds.setUsername(username);
-        ds.setPassword(password);
-        return ds;
+    public DataSource dsj(@Value("${jdbc.driver}") String driver,
+                          @Value("${jdbc.url}") String url,
+                          @Value("${jdbc.username}") String username,
+                          @Value("${jdbc.password}") String password) {
+        BasicDataSource dsj = new BasicDataSource();
+        dsj.setDriverClassName(driver);
+        dsj.setUrl(url);
+        dsj.setUsername(username);
+        dsj.setPassword(password);
+        return dsj;
     }
 
     @Bean
-    public JdbcTemplate jdbc(DataSource ds) {
-        return new JdbcTemplate(ds);
+    public JdbcTemplate jdbc(DataSource dsj) {
+        return new JdbcTemplate(dsj);
     }
 }

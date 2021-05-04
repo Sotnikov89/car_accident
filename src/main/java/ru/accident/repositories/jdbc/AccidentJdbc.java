@@ -1,10 +1,8 @@
 package ru.accident.repositories.jdbc;
 
-import lombok.AllArgsConstructor;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.support.GeneratedKeyHolder;
 import org.springframework.jdbc.support.KeyHolder;
-import org.springframework.stereotype.Repository;
 import ru.accident.domain.Accident;
 import ru.accident.domain.AccidentType;
 import ru.accident.domain.Rule;
@@ -14,11 +12,13 @@ import java.sql.Statement;
 import java.util.*;
 import java.util.stream.Collectors;
 
-@Repository
-@AllArgsConstructor
 public class AccidentJdbc {
 
     private final JdbcTemplate jdbc;
+
+    public AccidentJdbc(JdbcTemplate jdbc) {
+        this.jdbc = jdbc;
+    }
 
     public Accident findById(int id) {
         final int[] typeId = new int[1];

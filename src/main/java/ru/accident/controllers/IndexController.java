@@ -10,6 +10,7 @@ import ru.accident.services.ImplAccidentService;
 @Controller
 @AllArgsConstructor
 public class IndexController {
+
     private final ImplAccidentService implAccidentService;
 
     @GetMapping({"/", "/index"})
