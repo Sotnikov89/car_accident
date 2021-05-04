@@ -5,6 +5,6 @@ import ru.accident.domain.AccidentType;
 import java.util.Set;
 
 public interface AccidentTypeService {
-    public Set<AccidentType> findAll();
-    public AccidentType findById(int id);
+    Set<AccidentType> findAll();
+    AccidentType findById(int id);
 }

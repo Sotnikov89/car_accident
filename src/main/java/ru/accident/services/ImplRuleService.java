@@ -1,19 +1,18 @@
 package ru.accident.services;
 
+import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 import ru.accident.domain.Rule;
-import ru.accident.repositories.RuleRepository;
+import ru.accident.repositories.jdbc.RuleJdbc;
+import ru.accident.repositories.mem.RuleMem;
 
 import java.util.Set;
 
 @Service
+@AllArgsConstructor
 public class ImplRuleService implements RuleService{
 
-    private final RuleRepository ruleRepository;
-
-    public ImplRuleService(RuleRepository ruleRepository) {
-        this.ruleRepository = ruleRepository;
-    }
+    private final RuleJdbc ruleRepository;
 
     @Override
     public Set<Rule> findAll() {

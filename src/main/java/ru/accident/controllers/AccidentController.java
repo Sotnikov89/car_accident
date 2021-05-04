@@ -10,7 +10,6 @@ import ru.accident.services.ImplAccidentTypeService;
 import ru.accident.services.ImplRuleService;
 
 import javax.servlet.http.HttpServletRequest;
-import java.util.Arrays;
 
 @Controller
 @AllArgsConstructor
@@ -30,7 +29,7 @@ public class AccidentController {
 
     @GetMapping("/update/{id}")
     public String getEditForm(@PathVariable int id, Model model) {
-        model.addAttribute("accident", accidentService.getById(id));
+        model.addAttribute("accident", accidentService.findById(id));
         model.addAttribute("types", typeService.findAll());
         model.addAttribute("rules", ruleService.findAll());
         return "accidentForm";

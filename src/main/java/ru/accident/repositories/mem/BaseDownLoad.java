@@ -1,4 +1,4 @@
-package ru.accident.repositories;
+package ru.accident.repositories.mem;
 
 import org.springframework.stereotype.Component;
 import ru.accident.domain.Accident;
@@ -10,11 +10,11 @@ import java.util.Set;
 @Component
 public class BaseDownLoad {
 
-    private final AccidentRepository accidentRepository;
-    private final AccidentTypeRepository accidentTypeRepository;
-    private final RuleRepository ruleRepository;
+    private final AccidentMem accidentRepository;
+    private final AccidentTypeMem accidentTypeRepository;
+    private final RuleMem ruleRepository;
 
-    public BaseDownLoad(AccidentRepository accidentRepository, AccidentTypeRepository accidentTypeRepository, RuleRepository ruleRepository) {
+    public BaseDownLoad(AccidentMem accidentRepository, AccidentTypeMem accidentTypeRepository, RuleMem ruleRepository) {
         this.accidentRepository = accidentRepository;
         this.accidentTypeRepository = accidentTypeRepository;
         this.ruleRepository = ruleRepository;

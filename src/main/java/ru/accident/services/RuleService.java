@@ -5,6 +5,6 @@ import ru.accident.domain.Rule;
 import java.util.Set;
 
 public interface RuleService {
-    public Set<Rule> findAll();
-    public Rule findById(int id);
+    Set<Rule> findAll();
+    Rule findById(int id);
 }

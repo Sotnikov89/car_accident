@@ -1,4 +1,4 @@
-package ru.accident.repositories;
+package ru.accident.repositories.mem;
 
 import org.springframework.stereotype.Repository;
 import ru.accident.domain.AccidentType;
@@ -7,12 +7,12 @@ import java.util.*;
 import java.util.concurrent.atomic.AtomicInteger;
 
 @Repository
-public class AccidentTypeRepository {
+public class AccidentTypeMem {
 
     private final HashMap<Integer, AccidentType> accidentTypes = new HashMap();
     private final static AtomicInteger ID_Supplier = new AtomicInteger(3);
 
-    public AccidentTypeRepository() {
+    public AccidentTypeMem() {
     }
 
     public Set<AccidentType> findAll() {
