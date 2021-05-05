@@ -32,7 +32,7 @@ public class HbmConfig {
     }
 
     @Bean
-    public LocalSessionFactoryBean sessionFactory(@Value("${spring.jpa.hibernate.dialect}") String dialect, DataSource dsh) {
+    public LocalSessionFactoryBean sessionFactory(@Value("${hibernate.dialect}") String dialect, DataSource dsh) {
         LocalSessionFactoryBean sessionFactory = new LocalSessionFactoryBean();
         sessionFactory.setDataSource(dsh);
         sessionFactory.setPackagesToScan("ru.accident.domain");
