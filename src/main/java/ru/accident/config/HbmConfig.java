@@ -32,14 +32,11 @@ public class HbmConfig {
     }
 
     @Bean
-    public LocalSessionFactoryBean sessionFactory(@Value("${hibernate.dialect}") String dialect, DataSource dsh) {
+    public LocalSessionFactoryBean sessionFactory(DataSource dsh) {
         LocalSessionFactoryBean sessionFactory = new LocalSessionFactoryBean();
         sessionFactory.setDataSource(dsh);
         sessionFactory.setPackagesToScan("ru.accident.domain");
-        Properties cfg = new Properties();
-        cfg.setProperty("hibernate.dialect", dialect);
-        cfg.setProperty("hibernate.hbm2ddl.auto", "update");
-        sessionFactory.setHibernateProperties(cfg);
+        sessionFactory.setHibernateProperties(hibernateProperties());
         return sessionFactory;
     }
 
@@ -48,5 +45,14 @@ public class HbmConfig {
         HibernateTransactionManager tx = new HibernateTransactionManager();
         tx.setSessionFactory(sf);
         return tx;
+    }
+
+    private final Properties hibernateProperties() {
+        Properties hibernateProperties = new Properties();
+        hibernateProperties.setProperty(
+                "hibernate.hbm2ddl.auto", "update");
+        hibernateProperties.setProperty(
+                "hibernate.dialect", "org.hibernate.dialect.PostgreSQLDialect");
+        return hibernateProperties;
     }
 }
