@@ -1,19 +1,19 @@
 package ru.accident.repositories.hbm;
 
-import lombok.AllArgsConstructor;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
-import org.springframework.stereotype.Component;
 
 import java.util.function.Consumer;
 import java.util.function.Function;
 
-@Component
-@AllArgsConstructor
 public class HbmMethods {
 
     private final SessionFactory sf;
+
+    public HbmMethods(SessionFactory sf) {
+        this.sf = sf;
+    }
 
     public <T> T sessionMethodsWithReturn(final Function<Session, T> command) {
         final Session session = sf.openSession();

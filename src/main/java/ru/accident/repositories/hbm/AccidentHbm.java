@@ -1,17 +1,17 @@
 package ru.accident.repositories.hbm;
 
-import lombok.AllArgsConstructor;
-import org.springframework.stereotype.Repository;
 import ru.accident.domain.Accident;
 
 import java.util.HashSet;
 import java.util.Set;
 
-@Repository
-@AllArgsConstructor
 public class AccidentHbm {
 
     private final HbmMethods hbmMethods;
+
+    public AccidentHbm(HbmMethods hbmMethods) {
+        this.hbmMethods = hbmMethods;
+    }
 
     public Accident findById(int id) {
         return (Accident) hbmMethods.sessionMethodsWithReturn(session -> session.createQuery(

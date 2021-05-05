@@ -21,9 +21,9 @@ public class Accident {
     private String name;
     private String text;
     private String address;
-    @OneToOne
+    @OneToOne (fetch = FetchType.EAGER)
     private AccidentType accidentType;
-    @OneToMany
+    @OneToMany (fetch = FetchType.EAGER)
     private Set<Rule> rules;
 
     public void addRule(Rule rule) {

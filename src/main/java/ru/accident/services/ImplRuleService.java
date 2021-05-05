@@ -3,25 +3,25 @@ package ru.accident.services;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 import ru.accident.domain.Rule;
-import ru.accident.repositories.hbm.RuleHbm;
-import ru.accident.repositories.jdbc.RuleJdbc;
-import ru.accident.repositories.mem.RuleMem;
+import ru.accident.repositories.jpa.RuleRepository;
 
+import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.Set;
 
 @Service
 @AllArgsConstructor
 public class ImplRuleService implements RuleService{
 
-    private final RuleHbm ruleRepository;
+    private final RuleRepository ruleRepository;
 
     @Override
     public Set<Rule> findAll() {
-        return ruleRepository.findAll();
+        return new HashSet<>( (ArrayList<Rule>) ruleRepository.findAll());
     }
 
     @Override
     public Rule findById(int id) {
-        return ruleRepository.findById(id);
+        return ruleRepository.findById(id).orElseThrow(() -> new RuntimeException("rule is not found"));
     }
 }
