@@ -38,7 +38,7 @@ public class HbmConfig {
         sessionFactory.setPackagesToScan("ru.accident.domain");
         Properties cfg = new Properties();
         cfg.setProperty("hibernate.dialect", dialect);
-        cfg.setProperty("hibernate.hbm2ddl.auto", "create");
+        cfg.setProperty("hibernate.hbm2ddl.auto", "update");
         sessionFactory.setHibernateProperties(cfg);
         return sessionFactory;
     }
