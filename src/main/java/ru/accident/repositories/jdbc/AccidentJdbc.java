@@ -1,5 +1,6 @@
 package ru.accident.repositories.jdbc;
 
+import lombok.AllArgsConstructor;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.support.GeneratedKeyHolder;
 import org.springframework.jdbc.support.KeyHolder;
@@ -14,13 +15,10 @@ import java.util.*;
 import java.util.stream.Collectors;
 
 @Repository
+@AllArgsConstructor
 public class AccidentJdbc {
 
     private final JdbcTemplate jdbc;
-
-    public AccidentJdbc(JdbcTemplate jdbc) {
-        this.jdbc = jdbc;
-    }
 
     public Accident findById(int id) {
         final int[] typeId = new int[1];
