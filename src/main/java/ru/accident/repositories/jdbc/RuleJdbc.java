@@ -1,11 +1,13 @@
 package ru.accident.repositories.jdbc;
 
 import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.stereotype.Repository;
 import ru.accident.domain.Rule;
 
 import java.util.HashSet;
 import java.util.Set;
 
+@Repository
 public class RuleJdbc {
 
     private final JdbcTemplate jdbc;

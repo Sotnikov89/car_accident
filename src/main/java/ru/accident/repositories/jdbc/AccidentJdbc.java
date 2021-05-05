@@ -3,6 +3,7 @@ package ru.accident.repositories.jdbc;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.support.GeneratedKeyHolder;
 import org.springframework.jdbc.support.KeyHolder;
+import org.springframework.stereotype.Repository;
 import ru.accident.domain.Accident;
 import ru.accident.domain.AccidentType;
 import ru.accident.domain.Rule;
@@ -12,6 +13,7 @@ import java.sql.Statement;
 import java.util.*;
 import java.util.stream.Collectors;
 
+@Repository
 public class AccidentJdbc {
 
     private final JdbcTemplate jdbc;
