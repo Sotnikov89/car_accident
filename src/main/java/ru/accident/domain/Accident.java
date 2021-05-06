@@ -23,7 +23,7 @@ public class Accident {
     private String address;
     @OneToOne (fetch = FetchType.EAGER)
     private AccidentType accidentType;
-    @OneToMany (fetch = FetchType.EAGER)
+    @ManyToMany (fetch = FetchType.EAGER)
     private Set<Rule> rules;
 
     public void addRule(Rule rule) {
