@@ -38,7 +38,10 @@
                         </li>
                     </ul>
                     <span class="navbar-text">
-                        Соблюдай законы дорог
+                        <c:if test="${not empty user}">
+                            Добро пожаловать <c:out value="${user.username}"/>!
+                        </c:if>
+                        Соблюдай законы дорог.
                     </span>
                 </div>
             </div>
