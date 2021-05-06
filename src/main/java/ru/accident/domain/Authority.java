@@ -1,6 +1,13 @@
 package ru.accident.domain;
 
-/*
+
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+import javax.persistence.*;
+
 @Data
 @Entity
 @Builder
@@ -13,4 +20,4 @@ public class Authority {
     private int id;
 
     private String authority;
-}*/
+}

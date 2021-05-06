@@ -34,7 +34,7 @@
                             <a class="nav-link" href="/car_accident/create">Добавить инцидент</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Вход/Регистрация</a>
+                            <a class="nav-link" href="/car_accident/login">Вход/Регистрация</a>
                         </li>
                     </ul>
                     <span class="navbar-text">

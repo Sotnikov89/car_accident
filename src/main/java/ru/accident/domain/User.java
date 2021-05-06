@@ -1,6 +1,13 @@
 package ru.accident.domain;
 
-/*@Data
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+import javax.persistence.*;
+
+@Data
 @Entity
 @Builder
 @NoArgsConstructor
@@ -20,4 +27,4 @@ public class User {
     private Authority authority;
 
     private boolean enabled;
-}*/
+}

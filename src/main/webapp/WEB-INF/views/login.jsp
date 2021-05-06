@@ -21,15 +21,40 @@
     <title>Accident</title>
 </head>
 <body>
-<div class="container pt-1">
-    <div class="row pt-2 row-cols-auto">
+<div class="container pt-3">
+    <div class="row">
+        <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #e3f2fd;">
+            <div class="container-fluid">
+                <div class="collapse navbar-collapse" id="navbarText">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link" href="/car_accident/index">Главная</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/car_accident/create">Добавить инцидент</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/car_accident/login">Вход/Регистрация</a>
+                        </li>
+                    </ul>
+                    <span class="navbar-text">
+                        <c:if test="${not empty user}">
+                            Добро пожаловать <c:out value="${user.username}"/>!
+                        </c:if>
+                        Соблюдай законы дорог.
+                    </span>
+                </div>
+            </div>
+        </nav>
+    </div>
+    <div class="row">
         <c:if test="${not empty errorMessage}">
             <div style="color:red; font-weight: bold; margin: 30px 0px;">
                     ${errorMessage}
             </div>
         </c:if>
     </div>
-    <div class="row pt-2">
+    <div class="row">
         <form name='login' action="<c:url value='/login'/>" method='POST'>
             <div class="card col-8" style="width: 100%">
                 <div class="card-header">
@@ -47,6 +72,9 @@
                         <button type="submit" class="btn btn-primary" >Войти</button>
                 </div>
                     <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
+                <div class="col-md-1">
+                    <a href="<c:url value='/reg'/>"><button type="button" class="btn btn-primary">Регистрация</button></a>
+                </div>
             </div>
         </form>
     </div>
