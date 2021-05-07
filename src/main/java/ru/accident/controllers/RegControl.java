@@ -29,13 +29,11 @@ public class RegControl {
         user.setEnabled(true);
         user.setPassword(encoder.encode(user.getPassword()));
         user.setAuthority(implAuthorityService.findByAuthority("ROLE_USER"));
-        String answer = "redirect:/login";
-        try {
-            implUserService.save(user);
-        } catch (Exception constraint) {
+        String page = "redirect:/login";
+        if (!implUserService.save(user)) {
             model.addAttribute("errorMessage", "Username is exist !!");
-            answer = "/reg";
+            page = "/reg";
         }
-        return answer;
+        return page;
     }
 }

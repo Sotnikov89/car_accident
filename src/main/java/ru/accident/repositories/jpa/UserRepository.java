@@ -6,4 +6,5 @@ import ru.accident.domain.User;
 
 @Repository
 public interface UserRepository extends CrudRepository<User, Integer> {
+    User findByUsername (String username);
 }
