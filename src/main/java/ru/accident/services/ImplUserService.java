@@ -5,8 +5,6 @@ import org.springframework.stereotype.Service;
 import ru.accident.domain.User;
 import ru.accident.repositories.jpa.UserRepository;
 
-import java.util.Optional;
-
 @Service
 @AllArgsConstructor
 public class ImplUserService implements UserService{
@@ -15,10 +13,13 @@ public class ImplUserService implements UserService{
 
     @Override
     public boolean save(User user) {
-        boolean nameFree = Optional.ofNullable(userRepository.findByUsername(user.getUsername())).isEmpty();
-        if (nameFree) {
+        boolean rsl = false;
+        try {
             userRepository.save(user);
+            rsl = true;
+        } catch (Exception e) {
+            e.printStackTrace();
         }
-        return nameFree;
+        return rsl;
     }
 }
