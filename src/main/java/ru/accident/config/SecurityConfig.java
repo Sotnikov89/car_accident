@@ -15,10 +15,6 @@ import javax.sql.DataSource;
 @Configuration
 @EnableWebSecurity
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
-
-    @Autowired
-    private PasswordEncoder passwordEncoder;
-
     @Autowired
     private DataSource ds;
 
@@ -61,5 +57,4 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .csrf()
                 .disable();
     }
-
 }

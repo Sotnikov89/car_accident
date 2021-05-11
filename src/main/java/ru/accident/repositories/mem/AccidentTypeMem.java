@@ -1,12 +1,12 @@
 package ru.accident.repositories.mem;
 
-import org.springframework.stereotype.Repository;
 import ru.accident.domain.AccidentType;
 
-import java.util.*;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Set;
 import java.util.concurrent.atomic.AtomicInteger;
 
-@Repository
 public class AccidentTypeMem {
 
     private final HashMap<Integer, AccidentType> accidentTypes = new HashMap();

@@ -1,13 +1,11 @@
 package ru.accident.repositories.mem;
 
-import org.springframework.stereotype.Component;
 import ru.accident.domain.Accident;
 import ru.accident.domain.AccidentType;
 import ru.accident.domain.Rule;
 
 import java.util.Set;
 
-@Component
 public class BaseDownLoad {
 
     private final AccidentMem accidentRepository;
