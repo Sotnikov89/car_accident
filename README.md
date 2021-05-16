@@ -16,10 +16,14 @@
 ![ScreenShot](images/1.PNG)
 ![ScreenShot](images/2.PNG)
 В структуре проекта, можно найти несколько разделов работы с БД, а именно: mem, hbm, jdbc, jpa. 
-В каждом пакете представлны отдельные классы для работы с БД: 
+В каждом пакете представлны отдельные классы для работы с БД:
+<br>
 mem - имитация БД с сохранением данных в обычную map;
+<br>
 jdbc - работа с БД через JDBC и соответственно JdbcTemplate + необходимая Spring конфигурация JDBCConfig;
+<br>
 hbm - работа с БД через Hibernate и соответственно Spring конфигурация HbmConfig;
+<br>
 jpa - работа с БД через Spring JPA + необходимая Spring конфигурация JpaConfig;
 ![ScreenShot](images/3.PNG)
 
