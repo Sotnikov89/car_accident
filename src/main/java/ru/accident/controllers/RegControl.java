@@ -30,7 +30,7 @@ public class RegControl {
         user.setPassword(encoder.encode(user.getPassword()));
         user.setAuthority(authorityService.findByAuthority("ROLE_USER"));
         boolean rsl = userService.save(user);
-        if (rsl) {
+        if (!rsl) {
             model.addAttribute("errorMessage", "Username is exist !!!");
         }
         return rsl? "auth" : "registration";
