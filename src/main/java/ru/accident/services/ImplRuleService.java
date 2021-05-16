@@ -5,7 +5,7 @@ import org.springframework.stereotype.Service;
 import ru.accident.domain.Rule;
 import ru.accident.repositories.jpa.RuleRepository;
 
-import java.util.ArrayList;
+import java.util.Collection;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -17,7 +17,7 @@ public class ImplRuleService implements RuleService{
 
     @Override
     public Set<Rule> findAll() {
-        return new HashSet<>( (ArrayList<Rule>) ruleRepository.findAll());
+        return new HashSet<>((Collection<? extends Rule>) ruleRepository.findAll());
     }
 
     @Override

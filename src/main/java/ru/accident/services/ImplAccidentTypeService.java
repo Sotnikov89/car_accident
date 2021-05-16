@@ -5,7 +5,7 @@ import org.springframework.stereotype.Service;
 import ru.accident.domain.AccidentType;
 import ru.accident.repositories.jpa.AccidentTypeRepository;
 
-import java.util.ArrayList;
+import java.util.Collection;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -17,7 +17,7 @@ public class ImplAccidentTypeService implements AccidentTypeService{
 
     @Override
     public Set<AccidentType> findAll() {
-        return new HashSet<>( (ArrayList<AccidentType>) accidentTypeRepository.findAll());
+        return new HashSet<>((Collection<? extends AccidentType>) accidentTypeRepository.findAll());
     }
 
     @Override

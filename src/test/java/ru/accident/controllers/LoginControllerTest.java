@@ -1,30 +1,33 @@
 package ru.accident.controllers;
 
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
-import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.security.test.context.support.WithMockUser;
+import org.mockito.MockitoAnnotations;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
-import ru.accident.AccidentApplication;
+import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.view;
 
-@SpringBootTest(classes = AccidentApplication.class)
-@AutoConfigureMockMvc
 class LoginControllerTest {
 
-    @Autowired
+    LoginController loginController;
+
     MockMvc mockMvc;
 
+    @BeforeEach
+    void setUp() {
+        MockitoAnnotations.initMocks(this);
+        loginController = new LoginController();
+        mockMvc = MockMvcBuilders.standaloneSetup(loginController).build();
+    }
+
     @Test
-    @WithMockUser
     void loginPage() throws Exception {
         mockMvc.perform(MockMvcRequestBuilders.get("/login"))
                 .andExpect(status().isOk())
-                .andExpect(view().name("login"));
+                .andExpect(view().name("auth"));
     }
 
     @Test

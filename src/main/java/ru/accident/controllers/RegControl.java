@@ -21,7 +21,7 @@ public class RegControl {
 
     @GetMapping("/reg")
     public String reg() {
-        return "reg";
+        return "registration";
     }
 
     @PostMapping("/reg")
@@ -33,6 +33,6 @@ public class RegControl {
         if (rsl) {
             model.addAttribute("errorMessage", "Username is exist !!!");
         }
-        return rsl? "redirect:/login" : "/reg";
+        return rsl? "auth" : "registration";
     }
 }

@@ -15,9 +15,7 @@ public class AccidentMem {
     public AccidentMem() {
     }
 
-    public Set<Accident> findAll() {
-        return new HashSet<>(accidents.values());
-    }
+    public Set<Accident> findAll() { return new HashSet<>(accidents.values()); }
 
     public Accident findById(int id) {
         return accidents.get(id);

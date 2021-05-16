@@ -8,8 +8,8 @@ import ru.accident.repositories.jpa.AccidentRepository;
 import ru.accident.repositories.jpa.AccidentTypeRepository;
 import ru.accident.repositories.jpa.RuleRepository;
 
-import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collection;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -22,9 +22,7 @@ public class ImplAccidentService implements AccidentService {
     private final RuleRepository ruleRepository;
 
     @Override
-    public Set<Accident> findAll() {
-        return new HashSet<>( (ArrayList<Accident>)  accidentRepository.findAll());
-    }
+    public Set<Accident> findAll() { return new HashSet<>((Collection<? extends Accident>) accidentRepository.findAll()); }
 
     @Override
     public Accident findById(int id) { return accidentRepository.findById(id).orElseThrow(() -> new RuntimeException("account is not found")); }
